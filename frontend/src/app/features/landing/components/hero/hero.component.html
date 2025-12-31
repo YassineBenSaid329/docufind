@@ -1,0 +1,112 @@
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-docu-bg">
+  
+  <!-- Subtle Gradient Accent (Top Right) -->
+  <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-b from-amber-100/50 to-transparent rounded-bl-full pointer-events-none"></div>
+
+  <!-- FLOATING BACKGROUND ELEMENTS (Restored & Restyled) -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none select-none z-0">
+    <!-- Card 1: Left Top -->
+    <div class="absolute top-[20%] left-[10%] opacity-60 animate-float-slow">
+      <div class="bg-white p-4 rounded-xl shadow-card border border-stone-100 transform -rotate-6">
+        <lucide-icon [img]="FileIcon" class="w-8 h-8 text-stone-400"></lucide-icon>
+      </div>
+    </div>
+    
+    <!-- Card 2: Right Middle -->
+    <div class="absolute top-[40%] right-[15%] opacity-60 animate-float-medium">
+      <div class="bg-white p-3 rounded-xl shadow-card border border-stone-100 transform rotate-12">
+        <lucide-icon [img]="DbIcon" class="w-6 h-6 text-docu-accent"></lucide-icon>
+      </div>
+    </div>
+
+    <!-- Card 3: Left Bottom -->
+    <div class="absolute bottom-[20%] left-[20%] opacity-40 animate-float-fast">
+      <div class="bg-white p-4 rounded-xl shadow-card border border-stone-100 transform rotate-3">
+        <lucide-icon [img]="ShieldIcon" class="w-10 h-10 text-emerald-600/70"></lucide-icon>
+      </div>
+    </div>
+
+    <!-- Card 4: Right Top (Distant) -->
+    <div class="absolute top-[15%] right-[25%] opacity-30 animate-float-slow" style="animation-delay: 2s;">
+      <div class="bg-white p-2 rounded-lg shadow-sm border border-stone-100 transform -rotate-3">
+        <lucide-icon [img]="CodeIcon" class="w-5 h-5 text-stone-300"></lucide-icon>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10 text-center">
+    
+    <!-- Tag Pill -->
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-amber-200 text-sm font-semibold text-docu-accent mb-8 shadow-sm animate-fade-in-up">
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-docu-accent opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-docu-accent"></span>
+      </span>
+      v1.0 Early Access
+    </div>
+
+    <!-- Main Headline -->
+    <h1 class="animate-fade-in-up text-5xl md:text-7xl font-bold tracking-tight mb-6 text-docu-text-main max-w-4xl mx-auto leading-[1.1]">
+      Your Personal <br />
+      <span class="text-gold-gradient font-serif italic pr-2">
+        Knowledge Engine
+      </span>
+    </h1>
+
+    <!-- Subheadline -->
+    <p class="animate-fade-in-up delay-100 text-lg md:text-xl text-docu-text-muted mb-10 max-w-2xl mx-auto leading-relaxed">
+      Upload. Index. Search. Retrieve insights from your academic papers, legal briefs, and research notes in milliseconds.
+    </p>
+
+    <!-- Search Bar Demo -->
+    <div class="animate-fade-in-up delay-200 max-w-2xl mx-auto mb-12 transform hover:scale-[1.01] transition-transform duration-300">
+      <div class="bg-white rounded-xl p-2 flex items-center gap-3 shadow-gold border border-amber-100 min-h-[64px]">
+        <div class="pl-4 text-docu-accent">
+          <lucide-icon [img]="SearchIcon" class="w-6 h-6"></lucide-icon>
+        </div>
+        <div class="flex-1 text-left font-mono text-base overflow-hidden whitespace-nowrap">
+          <span class="text-slate-700">{{ displayText }}</span>
+          <span class="animate-cursor-blink text-docu-accent border-r-2 border-docu-accent ml-0.5 h-5 inline-block align-middle">&nbsp;</span>
+        </div>
+        <div class="hidden md:flex gap-2 pr-2">
+          <span class="px-2 py-1 rounded bg-stone-100 text-xs text-stone-500 border border-stone-200 font-bold">CTRL</span>
+          <span class="px-2 py-1 rounded bg-stone-100 text-xs text-stone-500 border border-stone-200 font-bold">K</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Buttons -->
+    <div class="animate-fade-in-up delay-300 flex flex-col md:flex-row gap-4 justify-center items-center">
+      <!-- Primary: Gold -->
+      <button class="group relative px-8 py-3.5 rounded-lg bg-docu-accent text-white font-bold hover:bg-docu-accent-hover transition-all shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40 hover:-translate-y-0.5 flex items-center gap-2">
+        Get Started Free
+        <lucide-icon [img]="ArrowRightIcon" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></lucide-icon>
+      </button>
+
+      <!-- Secondary: Brown Outline -->
+      <button (click)="scrollToHowItWorks()" class="px-8 py-3.5 rounded-lg bg-transparent border border-docu-primary text-docu-primary font-bold hover:bg-docu-primary hover:text-white transition-colors">
+        See How It Works
+      </button>
+    </div>
+
+    <!-- Mini Features -->
+    <div class="mt-20 pt-10 border-t border-stone-200 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+      <div class="flex flex-col items-center gap-2">
+        <lucide-icon [img]="FileIcon" class="w-6 h-6 text-docu-accent mb-2"></lucide-icon>
+        <h3 class="font-bold text-docu-text-main">Any Format</h3>
+        <p class="text-sm text-docu-text-muted">PDF, TXT, MD supported</p>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <lucide-icon [img]="DbIcon" class="w-6 h-6 text-docu-accent mb-2"></lucide-icon>
+        <h3 class="font-bold text-docu-text-main">Local First</h3>
+        <p class="text-sm text-docu-text-muted">Secure on-device storage</p>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <lucide-icon [img]="ShieldIcon" class="w-6 h-6 text-docu-accent mb-2"></lucide-icon>
+        <h3 class="font-bold text-docu-text-main">Private</h3>
+        <p class="text-sm text-docu-text-muted">Your data stays yours</p>
+      </div>
+    </div>
+
+  </div>
+</section>
